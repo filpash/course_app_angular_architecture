@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
-import {Observable, Subject} from "rxjs";
+import { Observable, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
 import { Store, select } from "@ngrx/store";
@@ -7,6 +7,7 @@ import * as fromRoot from "@app/store";
 import * as fromDictionaries from "@app/store/dictionaries";
 
 import { StepperService } from "./components/stepper/services";
+import { PersonalForm } from "./components/personal/personal.component";
 
 @Component({
   selector: 'app-form',
@@ -48,4 +49,7 @@ export class FormComponent implements OnInit, OnDestroy {
     this.destroy.complete();
   }
 
+  onChangePersonal(data: PersonalForm): void {
+    console.log('personal changed = ', data);
+  }
 }

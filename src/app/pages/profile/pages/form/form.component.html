@@ -8,7 +8,11 @@
     <app-stepper *ngIf="dictionariesIsReady$ | async">
       <ng-container [ngSwitch]="stepper?.activeStep?.key">
 
-        <app-personal *ngSwitchCase="'personal'"></app-personal>
+        <app-personal *ngSwitchCase="'personal'"
+                      [dictionaries]="dictionaries$ | async"
+                      (changed)="onChangePersonal($event)"
+        >
+        </app-personal>
         <app-professional *ngSwitchCase="'professional'"></app-professional>
 
       </ng-container>
