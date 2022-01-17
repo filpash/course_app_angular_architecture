@@ -1,7 +1,7 @@
-import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormBuilder, FormGroup, Validators} from "@angular/forms";
-import {Dictionaries} from "@app/store/dictionaries";
-import {ExperienceForm} from "./experiences/experiences.component";
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from "@angular/forms";
+import { Dictionaries } from "@app/store/dictionaries";
+import { ExperienceForm } from "./experiences/experiences.component";
 
 import { ControlEntities, mapControls } from "@app/shared/utils/form";
 
