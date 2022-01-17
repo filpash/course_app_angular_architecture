@@ -4,6 +4,10 @@
     <app-input formControlName="expectedSalary"></app-input>
   </app-form-field>
 
+  <app-form-field label="Experience" [required]="true">
+    <app-experiences [parent]="form" [values]="value?.experiences" name="experiences"></app-experiences>
+  </app-form-field>
+
   <app-form-field  label="Specialization" [required]="true" [control]="form.controls.specialization">
     <app-select formControlName="specialization" [items]="dictionaries.specializations.controlItems"></app-select>
   </app-form-field>

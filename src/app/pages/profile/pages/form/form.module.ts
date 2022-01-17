@@ -3,13 +3,14 @@ import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from "@angular/forms";
 
 import {
-  FormFieldModule,
-  InputModule,
-  AutocompleteModule,
-  SelectModule,
-  CheckboxesModule,
-  RadiosModule,
-  DateRangeModule
+    FormFieldModule,
+    InputModule,
+    AutocompleteModule,
+    SelectModule,
+    CheckboxesModule,
+    RadiosModule,
+    DateRangeModule,
+    ButtonModule
 } from "@app/shared";
 import { FilesUploadModule } from "@app/shared";
 import { SpinnerModule } from "@app/shared";
@@ -23,6 +24,7 @@ import { PersonalComponent } from './components/personal/personal.component';
 import { ProfessionalComponent } from './components/professional/professional.component';
 import { EmployeeComponent } from './components/professional/roles/employee/employee.component';
 import { RecruiterComponent } from './components/professional/roles/recruiter/recruiter.component';
+import { ExperiencesComponent } from './components/professional/roles/employee/experiences/experiences.component';
 
 
 @NgModule({
@@ -31,23 +33,25 @@ import { RecruiterComponent } from './components/professional/roles/recruiter/re
     PersonalComponent,
     ProfessionalComponent,
     EmployeeComponent,
-    RecruiterComponent
+    RecruiterComponent,
+    ExperiencesComponent
   ],
-  imports: [
-    CommonModule,
-    ReactiveFormsModule,
-    FormRoutingModule,
-    StepperModule,
-    FormFieldModule,
-    InputModule,
-    AutocompleteModule,
-    SelectModule,
-    CheckboxesModule,
-    RadiosModule,
-    DateRangeModule,
-    FilesUploadModule,
-    UserPhotoModule,
-    SpinnerModule,
-  ]
+    imports: [
+        CommonModule,
+        ReactiveFormsModule,
+        FormRoutingModule,
+        StepperModule,
+        FormFieldModule,
+        InputModule,
+        AutocompleteModule,
+        SelectModule,
+        CheckboxesModule,
+        RadiosModule,
+        DateRangeModule,
+        FilesUploadModule,
+        UserPhotoModule,
+        SpinnerModule,
+        ButtonModule,
+    ]
 })
 export class FormModule { }
