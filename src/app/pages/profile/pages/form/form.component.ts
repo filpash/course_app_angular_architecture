@@ -1,10 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnDestroy, OnInit } from '@angular/core';
+import { ActivatedRoute, Router } from "@angular/router";
 import { Observable, Subject } from "rxjs";
 import { takeUntil } from "rxjs/operators";
 
 import { Store, select } from "@ngrx/store";
 import * as fromRoot from "@app/store";
 import * as fromDictionaries from "@app/store/dictionaries";
+import * as fromUser from "@app/store/user";
 
 import { StepperService } from "./components/stepper/services";
 import { PersonalForm } from "./components/personal/personal.component";
@@ -26,14 +28,21 @@ export class FormComponent implements OnInit, OnDestroy {
   dictionaries$: Observable<fromDictionaries.Dictionaries>;
   dictionariesIsReady$: Observable<boolean>;
 
+  private user: fromUser.User;
+
   private destroy = new Subject<any>();
 
   constructor(
+    private route: ActivatedRoute,
+    private router: Router,
     private store: Store<fromRoot.State>,
     public stepper: StepperService
   ) { }
 
   ngOnInit(): void {
+
+    this.user = this.route.snapshot.data.user;
+
     this.dictionaries$ = this.store.pipe(select(fromDictionaries.getDictionaries));
     this.dictionariesIsReady$ = this.store.pipe(select(fromDictionaries.getIsReady));
 
