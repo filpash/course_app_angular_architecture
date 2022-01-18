@@ -10,6 +10,11 @@ import { StepperService } from "./components/stepper/services";
 import { PersonalForm } from "./components/personal/personal.component";
 import { ProfessionalForm } from "./components/professional/professional.component";
 
+export interface ProfileForm {
+  personal: PersonalForm;
+  profession: ProfessionalForm;
+}
+
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
