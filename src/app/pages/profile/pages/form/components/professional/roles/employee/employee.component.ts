@@ -10,7 +10,7 @@ export interface EmployeeForm {
   skills: string[];
   qualification: string;
   expectedSalary: number;
-  experiences: ExperienceForm;
+  experiences: ExperienceForm[];
 }
 
 @Component({

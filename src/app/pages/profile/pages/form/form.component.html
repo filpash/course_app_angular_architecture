@@ -11,11 +11,13 @@
         <app-personal *ngSwitchCase="'personal'"
                       [dictionaries]="dictionaries$ | async"
                       (changed)="onChangePersonal($event)"
+                      [value]="personal$ | async"
         >
         </app-personal>
         <app-professional *ngSwitchCase="'professional'"
                           [dictionaries]="dictionaries$ | async"
                           (changed)="onChangeProfessional($event)"
+                          [value]="professional$ | async"
         >
         </app-professional>
 
