@@ -27,7 +27,7 @@ export class StepperComponent implements OnInit, OnDestroy {
   }
 
   get steps() {
-    return this.stepper.step;
+    return this.stepper.steps;
   }
 
   get activeStep() {
@@ -65,4 +65,5 @@ export class StepperComponent implements OnInit, OnDestroy {
   onCancel() {
     this.stepper.cancel.next();
   }
+
 }

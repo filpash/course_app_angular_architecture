@@ -19,11 +19,11 @@ export enum Types {
   SIGN_OUT_SUCCESS = '[User] Sign Out: Success',
   SIGN_OUT_ERROR = '[User] Sign Out: Error',
 
-  CREATE = '[User] Create: start',
+  CREATE = '[User] Create: Start',
   CREATE_SUCCESS = '[User] Create: Success',
   CREATE_ERROR = '[User] Create: Error',
 
-  UPDATE = '[User] Update: start',
+  UPDATE = '[User] Update: Start',
   UPDATE_SUCCESS = '[User] Update: Success',
   UPDATE_ERROR = '[User] Update: Error',
 }

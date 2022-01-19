@@ -6,8 +6,8 @@ export type FormState = ProfileForm;
 
 const initialState: FormState = {
   personal: null,
-  profession: null
-}
+  professional: null
+};
 
 export function reducer(state = initialState, action: fromActions.All): FormState {
   switch (action.type) {
@@ -17,16 +17,15 @@ export function reducer(state = initialState, action: fromActions.All): FormStat
     }
 
     case fromActions.Types.UPDATE: {
-      return { ...state, ...action.changes }
+      return { ...state, ...action.changes };
     }
 
     case fromActions.Types.CLEAR: {
-      return { ...initialState }
+      return { ...initialState };
     }
 
     default: {
       return state;
     }
-
   }
 }

@@ -14,7 +14,7 @@ export interface ActiveStep extends Step {
 @Injectable()
 export class StepperService {
 
-  step: Step[];
+  steps: Step[];
   activeStep: ActiveStep;
 
   next = new Subject<boolean>();
@@ -33,27 +33,29 @@ export class StepperService {
   check$ = this.check.asObservable();
 
   constructor() {
+
     this.next$ = this.next.asObservable().pipe(
       filter(isOk => isOk)
     );
 
     this.complete$ = this.complete.asObservable().pipe(
       filter(isOk => isOk)
-    )
+    );
+
   }
 
   init(steps: Step[]): void {
-    this.step = steps;
+    this.steps = steps;
     this.activeStep = { ...steps[0], index: 0 };
   }
 
   onNext(): void {
     const index = this.activeStep.index + 1;
-    this.activeStep = { ...this.step[index], index };
+    this.activeStep = { ...this.steps[index], index };
   }
 
   onPrev(): void {
     const index = this.activeStep.index - 1;
-    this.activeStep = { ...this.step[index], index };
+    this.activeStep = { ...this.steps[index], index };
   }
 }

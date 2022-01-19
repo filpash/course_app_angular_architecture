@@ -23,6 +23,6 @@ export class Clear implements Action {
 }
 
 export type All
-  = Set |
-    Update |
-    Clear;
+  = Set
+  | Update
+  | Clear;

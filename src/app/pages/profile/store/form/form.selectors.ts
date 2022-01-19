@@ -14,5 +14,5 @@ export const getPersonalForm = createSelector(
 
 export const getProfessionalForm = createSelector(
   getFormState,
-  (state: FormState) => !!state.profession && state.profession
+  (state: FormState) => !!state.professional && state.professional
 );

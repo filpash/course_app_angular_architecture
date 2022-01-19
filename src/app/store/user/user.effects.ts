@@ -104,7 +104,7 @@ export class UserEffects {
   );
 
   @Effect()
-  Create: Observable<Action> = this.actions.pipe(
+  create: Observable<Action> = this.actions.pipe(
     ofType(fromActions.Types.CREATE),
     map((action: fromActions.Create) => action.user),
     withLatestFrom(this.afAuth.authState.pipe(take(1))),
@@ -124,10 +124,10 @@ export class UserEffects {
   );
 
   @Effect()
-  Update: Observable<Action> = this.actions.pipe(
+  update: Observable<Action> = this.actions.pipe(
     ofType(fromActions.Types.UPDATE),
     map((action: fromActions.Update) => action.user),
-    switchMap((user: User) =>
+    switchMap(user =>
       from(this.afs.collection('users').doc(user.uid).set(user)).pipe(
         tap(() => this.router.navigate(['/profile', user.uid])),
         map(() => new fromActions.UpdateSuccess(user)),

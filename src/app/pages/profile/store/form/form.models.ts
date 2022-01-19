@@ -1,1 +1,1 @@
-export { ProfileForm } from "@app/pages/profile/pages/form/form.component";
+export { ProfileForm } from '../../pages/form/form.component';
