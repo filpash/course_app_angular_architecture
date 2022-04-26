@@ -1,8 +1,10 @@
+import * as HEADERS from './constants/table-header';
+
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
 
 import { regex, regexError, markFormGropeTouched } from "@app/shared/utils";
-import { ControlItem } from "@app/models/frontend";
+import { ControlItem, TableDataHeader } from "@app/models/frontend";
 import { NotificationService } from "@app/services";
 
 @Component({
@@ -14,8 +16,10 @@ export class SharedComponent implements OnInit {
   form: FormGroup;
   isInline: boolean;
   regexError = regexError;
+  sharedColNameProps: TableDataHeader[] = HEADERS.requestsColNameProps;
 
   items: ControlItem[];
+  sharedInfoData: {}[];
 
   showSpinner: boolean = false;
 
@@ -31,6 +35,13 @@ export class SharedComponent implements OnInit {
       { label: 'Third', value: 3 },
       { label: 'Fourth', value: 4 },
       { label: 'Fifth', value: 5 }
+    ];
+
+    this.sharedInfoData = [
+      { id: '2', name: 'Nick', surname: 'Rock', age: 24, department: 'California' },
+      { id: '7', name: 'Mila', surname: 'Mils', age: 28, department: 'New York' },
+      { id: '9', name: 'Andrey', surname: 'Mo', age: 32, department: 'Los Angeles' },
+      { id: '18', name: 'Max', surname: 'Roy', age: 36, department: 'Washington' }
     ];
   }
 
@@ -139,5 +150,9 @@ export class SharedComponent implements OnInit {
 
   onFilesChanged(urls: string | string[]): void {
     console.log('urls = ', urls);
+  }
+
+  linkEvent(data: any): void {
+    console.log(data.department);
   }
 }

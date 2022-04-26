@@ -1,0 +1,73 @@
+<div [class]="isVerticalScroll ? 'table-block-scroll vertical-scroll' : 'table-block-scroll'">
+  <div class="table-block">
+    <div class="content-table-container">
+      <perfect-scrollbar>
+        <table
+          mat-table
+          [dataSource]="dataSource"
+          matSort
+          class="content-table"
+          aria-describedby="table-caption"
+        >
+          <ng-container
+            *ngFor="let column of tableCols; let i = index"
+            [matColumnDef]="column.key"
+          >
+            <th
+              class="header-colm"
+              mat-header-cell
+              *matHeaderCellDef
+              mat-sort-header
+              disableClear
+              scope="col"
+            >
+              {{ tableCols[i]["display"] }}
+            </th>
+            <td
+              class="content-colm"
+              mat-cell
+              *matCellDef="let element"
+            >
+              <ng-container *ngIf="!column.config; else hasConfig">
+                {{ element[column.key] }}
+              </ng-container>
+
+              <ng-template #hasConfig>
+
+                <ng-container *ngIf="column.config.isDate">
+                  {{ element[column.key] | date: column.config.format }}
+                </ng-container>
+
+                <ng-container *ngIf="column.config.isButton">
+                  <button
+                    *ngFor="let button of column.config.buttonName"
+                    (click)="$event.stopPropagation(); buttonClick(element)"
+                    mat-button
+                  >
+                    {{ button }}
+                  </button>
+                </ng-container>
+
+                <ng-container *ngIf="column.config.isLink">
+                  <a class="link"
+                     *ngFor="let link of column.config.linkName"
+                     (click)="$event.stopPropagation(); linkClick(element)"
+                  >
+                    {{ link }}
+                  </a>
+                </ng-container>
+              </ng-template>
+            </td>
+          </ng-container>
+          <tr mat-header-row *matHeaderRowDef="keys; sticky: true"></tr>
+          <tr mat-row *matRowDef="let row; columns: keys"></tr>
+        </table>
+
+        <div *ngIf="!dataSource?.length" class="no-data-title">
+          {{ 'No Data' }}
+        </div>
+      </perfect-scrollbar>
+    </div>
+  </div>
+</div>
+

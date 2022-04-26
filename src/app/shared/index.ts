@@ -4,3 +4,4 @@ export * from './indicators';
 export * from './layout';
 export * from './popups';
 export * from './utils';
+export * from './tables';

@@ -1,3 +1,10 @@
+<h2>Table</h2>
+
+<mat-app-table [cols]="sharedColNameProps"
+               [data]="sharedInfoData"
+               (linkEvent)="linkEvent($event)"
+></mat-app-table>
+
 <h2>Files Upload</h2>
 
 <app-button appFilesUpload [multiple]="true" (changed)="onFilesChanged($event)">Upload</app-button>
