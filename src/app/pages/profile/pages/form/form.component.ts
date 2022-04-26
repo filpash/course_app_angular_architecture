@@ -34,7 +34,7 @@ export class FormComponent implements OnInit, OnDestroy {
 
   loading$: Observable<boolean>;
 
-  profile$: Observable<ProfileForm>;
+  private profile$: Observable<ProfileForm>;
   private user: fromUser.User;
 
   private isEditing: boolean;

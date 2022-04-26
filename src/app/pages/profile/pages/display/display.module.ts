@@ -1,6 +1,8 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
+import { UserPhotoModule } from "@app/shared";
+
 import { DisplayRoutingModule } from './display-routing.module';
 import { DisplayComponent } from './display.component';
 
@@ -11,7 +13,8 @@ import { DisplayComponent } from './display.component';
   ],
   imports: [
     CommonModule,
-    DisplayRoutingModule
+    DisplayRoutingModule,
+    UserPhotoModule
   ]
 })
 export class DisplayModule { }

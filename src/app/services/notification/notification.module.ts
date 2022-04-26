@@ -15,7 +15,7 @@ import { NotificationComponent } from '@app/services/notification/components';
   ]
 })
 export class NotificationModule {
-  static forFoot(): ModuleWithProviders<any> {
+  static forRoot(): ModuleWithProviders<any> {
     return {
       ngModule: NotificationModule,
       providers: [
