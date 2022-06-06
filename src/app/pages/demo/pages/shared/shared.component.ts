@@ -22,6 +22,7 @@ export class SharedComponent implements OnInit {
   sharedInfoData: {}[];
 
   showSpinner: boolean = false;
+  checked: boolean = false;
 
   constructor(
     private fb: FormBuilder,
@@ -34,7 +35,9 @@ export class SharedComponent implements OnInit {
       { label: 'Second', value: 2 },
       { label: 'Third', value: 3 },
       { label: 'Fourth', value: 4 },
-      { label: 'Fifth', value: 5 }
+      { label: 'Fifth', value: 5 },
+      { label: 'Sixth', value: 6 },
+      { label: 'Seventh', value: 7 }
     ];
 
     this.sharedInfoData = [
@@ -73,6 +76,12 @@ export class SharedComponent implements OnInit {
           Validators.required
         ]
       }],
+      selectFilter: [null, {
+        updateOn: 'change',
+        validators: [
+          Validators.required
+        ]
+      }],
       checkboxes: [null, {
         updateOn: 'change',
         validators: [
@@ -106,6 +115,7 @@ export class SharedComponent implements OnInit {
       password: 'qwerty',
       autocomplete: 1,
       select: 2,
+      selectFilter: [3],
       checkboxes: [3],
       radios: 4,
       date: new Date().getTime(),
@@ -154,5 +164,9 @@ export class SharedComponent implements OnInit {
 
   linkEvent(data: any): void {
     console.log(data.department);
+  }
+
+  waitForFilterResponse(value: string): void {
+    console.log(value)
   }
 }

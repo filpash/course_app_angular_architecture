@@ -64,6 +64,24 @@
       <app-select formControlName="select" [items]="items"></app-select>
     </app-form-field>
 
+    <app-form-field label="Select filter"
+                    [required]="true"
+                    [control]="form.controls.selectFilter"
+                    [isInline]="isInline"
+    >
+      <app-select-filter
+        fxFill
+        appearance="outline"
+        placeholder="Search filter"
+        formControlName="selectFilter"
+        searchPlaceholder="Search your item..."
+        [multiple]="true"
+        [items]="items"
+        (itemFilterServerSide)="waitForFilterResponse($event)"
+      >
+      </app-select-filter>
+    </app-form-field>
+
     <app-form-field label="Checkboxes"
                     [required]="true"
                     [control]="form.controls.checkboxes"

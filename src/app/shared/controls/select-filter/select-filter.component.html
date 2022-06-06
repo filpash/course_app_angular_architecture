@@ -1,0 +1,24 @@
+<div class="select app-input">
+  <mat-select [value]="value" (selectionChange)="onChanged($event)" (blur)="onBlur()">
+    <mat-optgroup>
+      <mat-form-field [floatLabel]="'never'" fxFill>
+        <input matInput [placeholder]="searchPlaceholder" [formControl]="filterFormControl">
+        <button matSuffix mat-icon-button aria-label="company" (click)="filterFormControl.setValue('')">
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-option class="sect-mat-option" disabled="true"></mat-option>
+    </mat-optgroup>
+
+
+    <div *ngIf="items | async as retrievedItems else waitingResponse">
+      <mat-option *ngFor="let item of retrievedItems" [value]="item[bindValueKey]">
+        <span>{{item[bindLabelKey]}}</span>
+      </mat-option>
+    </div>
+
+    <ng-template #waitingResponse>
+      <mat-option disabled="true">Please Wait...</mat-option>
+    </ng-template>
+  </mat-select>
+</div>
