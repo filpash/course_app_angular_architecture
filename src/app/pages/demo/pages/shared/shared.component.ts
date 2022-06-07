@@ -77,12 +77,15 @@ export class SharedComponent implements OnInit {
         ]
       }],
       selectFilter: [null, {
+        updateOn: 'change'
+      }],
+      checkboxes: [null, {
         updateOn: 'change',
         validators: [
           Validators.required
         ]
       }],
-      checkboxes: [null, {
+      multiCheckbox: [null, {
         updateOn: 'change',
         validators: [
           Validators.required

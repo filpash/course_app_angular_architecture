@@ -31,6 +31,7 @@ export class SelectFilterComponent implements OnInit, OnChanges {
   @Output() changed = new EventEmitter<Value>();
 
   value: Value;
+  isDisabled: boolean;
 
   filterFormControl: FormControl = new FormControl('');
   private isServerSide: boolean = true;
@@ -63,6 +64,10 @@ export class SelectFilterComponent implements OnInit, OnChanges {
 
   onBlur(): void {
     this.propagateTouched();
+  }
+
+  setDisabledState(isDisabled: boolean) {
+    this.isDisabled = isDisabled;
   }
 
   private listenToFilterFormControlChanges(): void {

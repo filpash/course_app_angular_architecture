@@ -6,6 +6,7 @@ import { PasswordModule } from "@app/shared/controls/password/password.module";
 import { SelectModule } from "@app/shared/controls/select/select.module";
 import { SelectFilterModule } from "@app/shared/controls/select-filter/select-filter.module";
 import { CheckboxesModule } from "@app/shared/controls/checkboxes/checkboxes.module";
+import { MultiCheckboxModule } from '@app/shared/controls/multi-checkbox/multi-checkbox.module';
 import { RadiosModule } from "@app/shared/controls/radios/radios.module";
 import { DateModule } from "@app/shared/controls/date/date.module";
 import { DateRangeModule } from "@app/shared/controls/date-range/date-range.module";
@@ -23,6 +24,7 @@ import { AutocompleteModule } from "@app/shared/controls/autocomplete/autocomple
     SelectModule,
     SelectFilterModule,
     CheckboxesModule,
+    MultiCheckboxModule,
     RadiosModule,
     DateModule,
     DateRangeModule,
@@ -35,6 +37,7 @@ import { AutocompleteModule } from "@app/shared/controls/autocomplete/autocomple
     SelectModule,
     SelectFilterModule,
     CheckboxesModule,
+    MultiCheckboxModule,
     RadiosModule,
     DateModule,
     DateRangeModule,

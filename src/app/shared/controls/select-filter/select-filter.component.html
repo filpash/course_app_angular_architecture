@@ -1,5 +1,5 @@
-<div class="select app-input">
-  <mat-select [value]="value" (selectionChange)="onChanged($event)" (blur)="onBlur()">
+<div class="select app-input" [class.select_disabled]="isDisabled">
+  <mat-select [value]="value" [disabled]="isDisabled" (selectionChange)="onChanged($event)" (blur)="onBlur()">
     <mat-optgroup>
       <mat-form-field [floatLabel]="'never'" fxFill>
         <input matInput [placeholder]="searchPlaceholder" [formControl]="filterFormControl">

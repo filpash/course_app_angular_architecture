@@ -1,0 +1,12 @@
+<label class="checkbox" [class.checkbox_disabled]="isDisabled">
+  <input
+    type="checkbox"
+    class="checkbox__three-state"
+    #checkbox
+    [formControl]="fc"
+    [attr.disabled]="isDisabled ? true : null"
+    (change)="onChange()"
+    (click)="setState()"
+  />
+  <span class="checkbox__checkmark"></span>
+</label>

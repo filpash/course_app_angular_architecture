@@ -90,6 +90,14 @@
       <app-checkboxes formControlName="checkboxes" [items]="items"></app-checkboxes>
     </app-form-field>
 
+    <app-form-field label="Multi Checkbox"
+                    [required]="true"
+                    [control]="form.controls.multiCheckbox"
+                    [isInline]="isInline"
+    >
+      <app-multi-checkbox formControlName="multiCheckbox" [isThreeState]="true"></app-multi-checkbox>
+    </app-form-field>
+
     <app-form-field label="Radios"
                     [required]="true"
                     [control]="form.controls.radios"
